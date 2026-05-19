@@ -65,8 +65,8 @@ function AntivirusContent() {
     backgroundColor: "#050d06",
     color: "#39ff14", 
     fontFamily: "'Courier New', Courier, monospace",
-    height: "100vh",
-    padding: "40px 20px",
+    minHeight: "100vh",
+    padding: "20px 15px",
     boxSizing: "border-box",
     display: "flex",
     flexDirection: "column",
@@ -109,7 +109,7 @@ function AntivirusContent() {
                 boxShadow: "0 0 10px #39ff14"
               }}
             >
-              {loading ? "COMMUNICATING WITH RPC..." : `&gt; ACTIVATE SHIELD (${PRIX_ACCES} ETH)`}
+              {loading ? "COMMUNICATING WITH RPC..." : "> ACTIVATE SHIELD (0.001 ETH)"}
             </button>
           </div>
         </div>
@@ -161,4 +161,4 @@ export default function CheckPage() {
       <AntivirusContent />
     </Suspense>
   );
-}
+              }
